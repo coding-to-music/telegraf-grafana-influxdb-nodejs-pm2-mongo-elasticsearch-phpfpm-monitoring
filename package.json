@@ -1,0 +1,21 @@
+{
+  "name": "telegraf-grafana-influxdb-nodejs-pm2-mongo-elasticsearch-phpfpm-monitoring",
+  "version": "1.0.0",
+  "description": "#### Monitoring stack:  - telegraf - grafana  - influxdb  - influxdb_v2",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "git add . && git commit -m Build && git push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZaharBozhok/telegraf-grafana-influxdb-nodejs-pm2-mongo-elasticsearch-phpfpm-monitoring.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZaharBozhok/telegraf-grafana-influxdb-nodejs-pm2-mongo-elasticsearch-phpfpm-monitoring/issues"
+  },
+  "homepage": "https://github.com/ZaharBozhok/telegraf-grafana-influxdb-nodejs-pm2-mongo-elasticsearch-phpfpm-monitoring#readme"
+}
