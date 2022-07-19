@@ -10,7 +10,7 @@ services:
       - "9000:9000"
 
   nginx:
-    image: nginx:1.19
+    image: nginx:1.22.0
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
@@ -26,7 +26,8 @@ services:
       - ./grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
 
   telegraf:
-    image: telegraf:1.9.1
+    # image: telegraf:1.9.1
+    image: telegraf:1.23.2
     volumes:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
       - /var/run/docker.sock:/var/run/docker.sock
@@ -45,19 +46,22 @@ services:
     image: influxdb:1.8
 
   influxdb_v2:
-    image: influxdb:2.0
+    # image: influxdb:2.0
+    image: influxdb:2.3.0
     ports:
       - "8086:8086"
     env_file:
       - ./influxdb_v2/env.influxdb_v2
 
   mongo:
-    image: mongo:4.4.4
+    # image: mongo:4.4.4
+    image: mongo:5.0.9
     expose:
       - 27017
 
   elasticsearch:
-    image: elasticsearch:7.11.2
+    # image: elasticsearch:7.11.2
+    image: elasticsearch:8.3.2
     expose:
       - 9200
     ports:

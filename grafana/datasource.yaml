@@ -13,7 +13,8 @@ datasources:
     access: proxy
     url: http://influxdb_v2:8086
     secureJsonData:
-      token: 7BGnaU5oHARZ3P8wNIRcJW1_5Cp-_ArY6P5aV4NxB_EXXZqvKZiPtaL3KHkNYB-l0NJ1YTUUmpyf3xrwpGNTOA==
+      # token: 7BGnaU5oHARZ3P8wNIRcJW1_5Cp-_ArY6P5aV4NxB_EXXZqvKZiPtaL3KHkNYB-l0NJ1YTUUmpyf3xrwpGNTOA==
+      token: mvi1m_OZOg98IeiQEIo5jKYnEdKFWJMDmth63D5DjwTQnuZN0ckF-7X4apUInfqOsLDioWH_2KVShiCjoTGigw==
     jsonData:
       version: Flux
       organization: admin-org
