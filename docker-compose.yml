@@ -1,6 +1,5 @@
-version: "3.9"
+version: "3.7"
 services:
-
   phpfpm:
     image: php:7.4-fpm
     volumes:
@@ -22,16 +21,16 @@ services:
   grafana:
     image: grafana/grafana
     ports:
-    - "3000:3000"
-    volumes: 
-    - ./grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
+      - "3000:3000"
+    volumes:
+      - ./grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
 
   telegraf:
     image: telegraf:1.9.1
     volumes:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
       - /var/run/docker.sock:/var/run/docker.sock
-    env_file: 
+    env_file:
       - ./telegraf/env.telegraf
     depends_on:
       - influxdb
@@ -47,28 +46,27 @@ services:
 
   influxdb_v2:
     image: influxdb:2.0
-    ports: 
+    ports:
       - "8086:8086"
-    env_file: 
+    env_file:
       - ./influxdb_v2/env.influxdb_v2
 
   mongo:
     image: mongo:4.4.4
-    expose: 
+    expose:
       - 27017
 
   elasticsearch:
     image: elasticsearch:7.11.2
     expose:
       - 9200
-    ports: 
+    ports:
       - "19200:19200"
-    environment: 
+    environment:
       discovery.type: single-node
 
   nodejs:
-    build:
-      ./nodejs
-    ports: 
-    - "1337:1337"
-    - "9615:9615"
+    build: ./nodejs
+    ports:
+      - "1337:1337"
+      - "9615:9615"
